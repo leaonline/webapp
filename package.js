@@ -1,3 +1,4 @@
+/* eslint-env meteor */
 Package.describe({
   name: 'leaonline:webapp',
   version: '1.0.0',

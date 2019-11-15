@@ -1,7 +1,6 @@
 import { WebApp } from 'meteor/webapp'
 import bodyParser from 'body-parser'
 
-
 const get = (url, handler) => {
   WebApp.connectHandlers.use(url, function (req, res, next) {
     if (req.method.toLowerCase() === 'get') {
