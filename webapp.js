@@ -18,11 +18,11 @@ const post = function (url, handler) {
     // console.log(req.method)
     // console.log(req.query, req.body)
     if (req.method.toLowerCase() === 'post') {
-      if (!req.headers[ 'content-type' ] || req.headers[ 'content-type' ] !== 'application/json' || req.headers[ 'content-type' ] !== 'application/x-www-form-urlencoded') {
+      if (!req.headers['content-type'] || req.headers['content-type'] !== 'application/json' || req.headers['content-type'] !== 'application/x-www-form-urlencoded') {
         // Transforms requests which are POST and aren't "x-www-form-urlencoded" content type
         // and they pass the required information as query strings
         // console.log('Transforming a request to form-urlencoded with the query going to the body.')
-        req.headers[ 'content-type' ] = 'application/x-www-form-urlencoded'
+        req.headers['content-type'] = 'application/x-www-form-urlencoded'
 
         const hasBodyKeys = Object.keys(req.body).length > 0
         req.body = hasBodyKeys ? Object.assign({}, req.query, req.body) : Object.assign({}, req.body, req.query)
